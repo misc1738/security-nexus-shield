@@ -1,4 +1,3 @@
-
 interface AnomalyData {
   id: string;
   timestamp: string;
@@ -171,7 +170,7 @@ class AnomalyDetectionService {
     }
   }
 
-  private createAnomaly(type: string, confidence: number, features: number[]): void {
+  private createAnomaly(type: 'network' | 'process' | 'file' | 'user' | 'system', confidence: number, features: number[]): void {
     const severities: Array<'low' | 'medium' | 'high' | 'critical'> = ['low', 'medium', 'high', 'critical'];
     const severity = severities[Math.floor(confidence * severities.length)];
     

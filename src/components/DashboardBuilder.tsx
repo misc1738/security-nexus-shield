@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Plus, Edit, Trash2, Move, BarChart3, PieChart, Activity, TrendingUp, Shield, AlertTriangle } from 'lucide-react';
 import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd';
-import { ResponsiveContainer, LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { ResponsiveContainer, LineChart, Line, BarChart, Bar, PieChart as RechartsPieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 interface DashboardWidget {
   id: string;
@@ -299,7 +298,7 @@ const DashboardBuilder = () => {
         if (widget.config.chartType === 'pie') {
           return (
             <ResponsiveContainer width="100%" height={200}>
-              <PieChart>
+              <RechartsPieChart>
                 <Pie
                   data={widget.data}
                   cx="50%"
@@ -314,7 +313,7 @@ const DashboardBuilder = () => {
                   ))}
                 </Pie>
                 {widget.config.showLegend && <Tooltip />}
-              </PieChart>
+              </RechartsPieChart>
             </ResponsiveContainer>
           );
         } else if (widget.config.chartType === 'line') {
