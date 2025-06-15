@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Activity, Monitor, FileText, Settings, BarChart3, Users, AlertTriangle, TrendingUp } from 'lucide-react';
+import { Shield, Activity, Monitor, FileText, Settings, BarChart3, Users, AlertTriangle, TrendingUp, Brain, Layout } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import NotificationCenter from './NotificationCenter';
 
@@ -15,6 +15,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
     { id: 'detections', label: 'Detections', icon: AlertTriangle },
     { id: 'computers', label: 'Computers', icon: Monitor },
     { id: 'analytics', label: 'Analytics', icon: TrendingUp },
+    { id: 'ai-analytics', label: 'AI Analytics', icon: Brain },
+    { id: 'dashboard-builder', label: 'Dashboard Builder', icon: Layout },
     { id: 'policies', label: 'Policies', icon: Shield },
     { id: 'tasks', label: 'Tasks', icon: Activity },
     { id: 'reports', label: 'Reports', icon: FileText },
@@ -69,9 +71,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
         <div className="bg-slate-800 rounded-lg p-3">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-xs text-slate-300">System Online</span>
+            <span className="text-xs text-slate-300">AI Engine Online</span>
           </div>
-          <p className="text-xs text-slate-500 mt-1">All services operational</p>
+          <p className="text-xs text-slate-500 mt-1">ML models active</p>
         </div>
       </div>
     </div>
