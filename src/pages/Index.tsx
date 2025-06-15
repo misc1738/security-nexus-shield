@@ -1,11 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import Sidebar from '@/components/Sidebar';
+import Dashboard from '@/components/Dashboard';
+import DetectionsPage from '@/components/DetectionsPage';
+import ComputersPage from '@/components/ComputersPage';
+import PlaceholderPage from '@/components/PlaceholderPage';
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState('dashboard');
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'dashboard':
+        return <Dashboard />;
+      case 'detections':
+        return <DetectionsPage />;
+      case 'computers':
+        return <ComputersPage />;
+      case 'policies':
+        return <PlaceholderPage title="Policies" description="Manage security policies and configurations" />;
+      case 'tasks':
+        return <PlaceholderPage title="Tasks" description="Schedule and monitor endpoint tasks" />;
+      case 'reports':
+        return <PlaceholderPage title="Reports" description="Generate comprehensive security reports" />;
+      case 'users':
+        return <PlaceholderPage title="User Management" description="Manage user accounts and permissions" />;
+      case 'settings':
+        return <PlaceholderPage title="Settings" description="Configure system settings and preferences" />;
+      default:
+        return <Dashboard />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-slate-950 flex">
+      <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
+      <div className="flex-1 p-6 overflow-auto">
+        {renderContent()}
       </div>
     </div>
   );
