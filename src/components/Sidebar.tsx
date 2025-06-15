@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { Shield, Activity, Monitor, FileText, Settings, BarChart3, Users, AlertTriangle } from 'lucide-react';
+import { Shield, Activity, Monitor, FileText, Settings, BarChart3, Users, AlertTriangle, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import NotificationCenter from './NotificationCenter';
 
 interface SidebarProps {
   activeTab: string;
@@ -13,6 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
     { id: 'dashboard', label: 'Dashboard', icon: BarChart3 },
     { id: 'detections', label: 'Detections', icon: AlertTriangle },
     { id: 'computers', label: 'Computers', icon: Monitor },
+    { id: 'analytics', label: 'Analytics', icon: TrendingUp },
     { id: 'policies', label: 'Policies', icon: Shield },
     { id: 'tasks', label: 'Tasks', icon: Activity },
     { id: 'reports', label: 'Reports', icon: FileText },
@@ -24,14 +26,17 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
     <div className="w-64 bg-slate-900 border-r border-slate-700 min-h-screen">
       {/* Logo Area */}
       <div className="p-6 border-b border-slate-700">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <Shield className="w-5 h-5 text-white" />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Shield className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-white">Sentinel</h1>
+              <p className="text-xs text-slate-400">Security Platform</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-xl font-bold text-white">Sentinel</h1>
-            <p className="text-xs text-slate-400">Security Platform</p>
-          </div>
+          <NotificationCenter />
         </div>
       </div>
 

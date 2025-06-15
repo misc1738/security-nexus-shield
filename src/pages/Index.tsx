@@ -4,6 +4,7 @@ import Sidebar from '@/components/Sidebar';
 import Dashboard from '@/components/Dashboard';
 import DetectionsPage from '@/components/DetectionsPage';
 import ComputersPage from '@/components/ComputersPage';
+import ThreatAnalytics from '@/components/ThreatAnalytics';
 import PlaceholderPage from '@/components/PlaceholderPage';
 
 const Index = () => {
@@ -17,6 +18,8 @@ const Index = () => {
         return <DetectionsPage />;
       case 'computers':
         return <ComputersPage />;
+      case 'analytics':
+        return <ThreatAnalytics />;
       case 'policies':
         return <PlaceholderPage title="Policies" description="Manage security policies and configurations" />;
       case 'tasks':
