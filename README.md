@@ -1,6 +1,6 @@
-# SECURITY-NEXUS-SHIELD
+# SECURITY-NEXUS-SHIELD (Network Intrusion Detection System)
 
-_Unify Security, Empower Innovation, Defend with Confidence_
+MidTerm Project
 
 [![Last Commit](https://img.shields.io/github/last-commit/misc1738/security-nexus-shield?style=flat-square&color=blue)](https://github.com/misc1738/security-nexus-shield/commits/main)
 [![TypeScript](https://img.shields.io/badge/TypeScript-98.0%25-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
