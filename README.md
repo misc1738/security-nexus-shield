@@ -76,6 +76,7 @@ Build security-nexus-shield from the source and install dependencies:
 
     ```bash
     npm install
+    npm run dev
     ```
 
 ## Usage
