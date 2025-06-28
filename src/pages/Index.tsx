@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Sidebar from '@/components/Sidebar';
 import Dashboard from '@/components/Dashboard';
@@ -7,6 +6,11 @@ import ComputersPage from '@/components/ComputersPage';
 import ThreatAnalytics from '@/components/ThreatAnalytics';
 import AIAnalyticsPage from '@/components/AIAnalyticsPage';
 import DashboardBuilder from '@/components/DashboardBuilder';
+import IncidentResponsePage from '@/components/IncidentResponsePage';
+import ComplianceAuditPage from '@/components/ComplianceAuditPage';
+import VulnerabilityManagementPage from '@/components/VulnerabilityManagementPage';
+import ThreatHuntingPage from '@/components/ThreatHuntingPage';
+import NetworkSecurityPage from '@/components/NetworkSecurityPage';
 import PlaceholderPage from '@/components/PlaceholderPage';
 
 const Index = () => {
@@ -26,6 +30,16 @@ const Index = () => {
         return <AIAnalyticsPage />;
       case 'dashboard-builder':
         return <DashboardBuilder />;
+      case 'incident-response':
+        return <IncidentResponsePage />;
+      case 'compliance':
+        return <ComplianceAuditPage />;
+      case 'vulnerability-management':
+        return <VulnerabilityManagementPage />;
+      case 'threat-hunting':
+        return <ThreatHuntingPage />;
+      case 'network-security':
+        return <NetworkSecurityPage />;
       case 'policies':
         return <PlaceholderPage title="Policies" description="Manage security policies and configurations" />;
       case 'tasks':
