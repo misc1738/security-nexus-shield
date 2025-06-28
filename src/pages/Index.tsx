@@ -11,6 +11,10 @@ import ComplianceAuditPage from '@/components/ComplianceAuditPage';
 import VulnerabilityManagementPage from '@/components/VulnerabilityManagementPage';
 import ThreatHuntingPage from '@/components/ThreatHuntingPage';
 import NetworkSecurityPage from '@/components/NetworkSecurityPage';
+import ExecutiveDashboard from '@/components/ExecutiveDashboard';
+import UserManagementPage from '@/components/UserManagementPage';
+import AdvancedReportsPage from '@/components/AdvancedReportsPage';
+import SystemSettingsPage from '@/components/SystemSettingsPage';
 import PlaceholderPage from '@/components/PlaceholderPage';
 
 const Index = () => {
@@ -20,6 +24,8 @@ const Index = () => {
     switch (activeTab) {
       case 'dashboard':
         return <Dashboard />;
+      case 'executive-dashboard':
+        return <ExecutiveDashboard />;
       case 'detections':
         return <DetectionsPage />;
       case 'computers':
@@ -40,16 +46,16 @@ const Index = () => {
         return <ThreatHuntingPage />;
       case 'network-security':
         return <NetworkSecurityPage />;
-      case 'policies':
-        return <PlaceholderPage title="Policies" description="Manage security policies and configurations" />;
-      case 'tasks':
-        return <PlaceholderPage title="Tasks" description="Schedule and monitor endpoint tasks" />;
-      case 'reports':
-        return <PlaceholderPage title="Reports" description="Generate comprehensive security reports" />;
       case 'users':
-        return <PlaceholderPage title="User Management" description="Manage user accounts and permissions" />;
+        return <UserManagementPage />;
+      case 'reports':
+        return <AdvancedReportsPage />;
       case 'settings':
-        return <PlaceholderPage title="Settings" description="Configure system settings and preferences" />;
+        return <SystemSettingsPage />;
+      case 'policies':
+        return <PlaceholderPage title="Security Policies" description="Manage security policies and configurations" />;
+      case 'tasks':
+        return <PlaceholderPage title="Automated Tasks" description="Schedule and monitor endpoint tasks" />;
       default:
         return <Dashboard />;
     }
